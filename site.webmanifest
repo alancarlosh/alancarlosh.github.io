@@ -1,0 +1,21 @@
+{
+  "name": "Alan Carlos Hernandez Portfolio",
+  "short_name": "Alan Carlos",
+  "description": "Portafolio de Alan Carlos Hernandez Hernandez, desarrollador mobile iOS, Android y full stack.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "assets/favicons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

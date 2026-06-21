@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Alan Carlos</title>
+  <rect width="64" height="64" rx="14" fill="#0f766e" />
+  <text
+    x="50%"
+    y="54%"
+    fill="#ffffff"
+    font-family="Inter, Arial, sans-serif"
+    font-size="26"
+    font-weight="800"
+    text-anchor="middle"
+    dominant-baseline="middle"
+  >AC</text>
+</svg>

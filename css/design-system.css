@@ -1,0 +1,154 @@
+/*
+  Design System
+  Component contracts. Existing semantic classes are kept as aliases so the
+  current UI does not need a redesign.
+*/
+
+.container,
+.hero,
+.summary,
+.section,
+.contact {
+  width: min(var(--container-max), calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.surface,
+.card,
+.profile-panel,
+.summary > div,
+.project-card,
+.stack-list > div,
+.cv-card {
+  background: var(--white);
+  border: var(--surface-border);
+  border-radius: var(--radius-md);
+}
+
+.surface--muted,
+.summary > div {
+  background: var(--panel);
+}
+
+.surface--strong,
+.project-card.featured {
+  background: var(--panel-strong);
+  border-color: #b9d8d5;
+}
+
+.surface--elevated,
+.profile-panel {
+  box-shadow: var(--shadow);
+}
+
+.button {
+  min-height: var(--control-height);
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-weight: 800;
+}
+
+.button,
+.button:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.button:hover,
+.button:focus-visible {
+  text-decoration: none;
+}
+
+.button--primary,
+.button.primary {
+  color: var(--white);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.button--secondary,
+.button.secondary {
+  color: var(--ink);
+  background: var(--white);
+  border: var(--surface-border);
+}
+
+.button[aria-disabled="true"],
+.button:disabled,
+.filter:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.chip,
+.tag,
+.filter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.chip--muted,
+.tag {
+  color: var(--accent-dark);
+  background: #e6f5f2;
+}
+
+.filter {
+  cursor: pointer;
+  color: var(--ink);
+  background: var(--white);
+  border: var(--surface-border);
+}
+
+.filter.is-active,
+.filter[aria-pressed="true"] {
+  color: var(--white);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.text-link,
+.project-card a,
+.profile-links a,
+.link-row a {
+  color: var(--accent-dark);
+  font-weight: 800;
+}
+
+.text-link:hover,
+.project-card a:hover,
+.profile-links a:hover,
+.link-row a:hover {
+  text-decoration: underline;
+}
+
+.section-header,
+.section-heading {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.section-label,
+.eyebrow {
+  color: var(--accent-dark);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cluster,
+.hero-actions,
+.contact-actions,
+.project-topline,
+.link-row,
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+}

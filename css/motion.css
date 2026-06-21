@@ -1,0 +1,167 @@
+:root {
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 140ms;
+  --duration-base: 220ms;
+  --duration-slow: 420ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    animation: page-fade-in var(--duration-slow) var(--ease-emphasized) both;
+  }
+
+  .site-header {
+    transform: translateZ(0);
+  }
+
+  .brand,
+  .nav a,
+  a,
+  .button,
+  .filter,
+  .project-card,
+  .case-study,
+  .summary > div,
+  .stack-list > div,
+  .cv-card,
+  .profile-panel {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  .brand,
+  .nav a,
+  a {
+    transition:
+      opacity var(--duration-fast) var(--ease-standard);
+  }
+
+  .nav a:hover,
+  .profile-links a:hover,
+  .project-card a:hover,
+  .case-study a:hover,
+  .link-row a:hover {
+    opacity: 0.74;
+  }
+
+  .button,
+  .filter {
+    transition:
+      opacity var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
+    will-change: transform;
+  }
+
+  .button:hover,
+  .filter:hover {
+    transform: translateY(-1px);
+  }
+
+  .button:active,
+  .filter:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .project-card,
+  .case-study,
+  .summary > div,
+  .stack-list > div,
+  .cv-card,
+  .profile-panel {
+    transition:
+      opacity var(--duration-base) var(--ease-standard),
+      transform var(--duration-base) var(--ease-standard);
+  }
+
+  .project-card:hover,
+  .case-study:hover,
+  .summary > div:hover,
+  .stack-list > div:hover,
+  .cv-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .profile-panel:hover {
+    transform: translateY(-2px);
+  }
+
+  .filter.is-active,
+  .filter[aria-pressed="true"] {
+    transform: translateY(-1px);
+  }
+
+  .project-card.is-filtering {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px) scale(0.985);
+  }
+
+  .motion-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity var(--duration-slow) var(--ease-emphasized),
+      transform var(--duration-slow) var(--ease-emphasized);
+    will-change: opacity, transform;
+  }
+
+  .motion-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+  }
+
+  .hero-copy.motion-reveal {
+    transform: translateY(12px);
+  }
+
+  .profile-panel.motion-reveal {
+    transform: translateY(12px) scale(0.985);
+  }
+
+  .profile-panel.motion-reveal.is-visible {
+    transform: translateY(0) scale(1);
+  }
+
+  .project-card.motion-reveal.is-visible:hover,
+  .case-study.motion-reveal.is-visible:hover,
+  .summary > div.motion-reveal.is-visible:hover,
+  .stack-list > div.motion-reveal.is-visible:hover,
+  .cv-card.motion-reveal.is-visible:hover {
+    transform: translateY(-3px);
+  }
+
+  .profile-panel.motion-reveal.is-visible:hover {
+    transform: translateY(-2px) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
